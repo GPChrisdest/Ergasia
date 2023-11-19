@@ -1,29 +1,18 @@
-def sort(list):
-    marker = 1  #Marks the item which we want to sort
-
-    while marker < len(list):   #Loop repeats until we check the last item
-        add = []    #A list where we put the items that are lower than our marked number
-
-        if list[marker] <= list[0]:
-            """If the marked number is smaller than the first
-            we remove it from the main list and add it to the temporary list add[]
-            Then combining the 2 lists together we have sorted the marked number"""
-            add.append(list[marker])
-            list.remove(list[marker])
-            list = add + list
-        else:
-            new_marker = marker     #Setting a new marker so that we dont mix them up
-
-            while list[new_marker] >= list[0]:   
-                """We remove the items before the marked number until we reach one that is higher
-                Then we add the marked number and combine the lists"""
-                add.append(list[0])
-                list.remove(list[0])
-                new_marker -= 1     #We need to lower the marker because the length of the list changes
-
-            add.append(list[new_marker])
-            list.remove(list[new_marker])
-            list = add + list
-        marker += 1     #Increasing the marker so that we check all the items
-
+def sort2(list: list):
+    i = 1  # Starting index
+    while i < len(list):  # Loop through the whole list
+        for j in range(i - 1, -1, -1):  # Loop through indices below current index
+            """If the previous item of the list is smaller than the current one(i), check if the one before that(j-1)
+            is lower as well. If so, continue so that the check is run again with j = j-1. Otherwise, move the current
+            item(i) just before j.
+            """
+            if list[i] < list[j]:
+                if j - 1 >= 0 and list[i] < list[j - 1]:
+                    continue
+                val = list[i]
+                list.remove(val)
+                list.insert(j, val)
+                i -= 1  # Decrement i to account for the insertion before current i, thus ensuring that all items are checked
+                break
+        i += 1  # Increment i and continue the loop
     return list
