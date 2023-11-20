@@ -1,4 +1,4 @@
-def sort2(list: list):
+def sort(list: list):
     i = 1  # Starting index
     while i < len(list):  # Loop through the whole list
         for j in range(i - 1, -1, -1):  # Loop through indices below current index
