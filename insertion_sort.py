@@ -9,8 +9,7 @@ def sort(list: list):
             if list[i] < list[j]:
                 if j - 1 >= 0 and list[i] < list[j - 1]:
                     continue
-                val = list[i]
-                list.remove(val)
+                val = list.pop(i)
                 list.insert(j, val)
                 i -= 1  # Decrement i to account for the insertion before current i, thus ensuring that all items are checked
                 break
