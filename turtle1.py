@@ -50,9 +50,10 @@ for i in l:
 
 for item in c:
     collumn(item.height,item.position)
+    swap(c[0],c[3],c)
 
-swap(c[0],c[3],c)
 
 for i in c:
     collumn(i.height,i.position)
 turtle.exitonclick()
+
