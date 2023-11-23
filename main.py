@@ -29,7 +29,7 @@ def list_options():
                 user_input = input(f"Element No.{i+1} ")
                 if not user_input.isdigit():
                     print("Please input a number!")
-                    i -= 1
+                    i=i
                     continue
                 list.append(int(user_input))
                 i += 1
