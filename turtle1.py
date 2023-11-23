@@ -11,11 +11,11 @@ class Collumn():
 def create(height,position,color='blue'):
     #canvas 700x650
     t.hideturtle()
-    t.speed(200)
     t.speed('fastest')
     t.penup()
     if position < 35:
         position = -700 + 31*position
+    else:
         position = 700 - 31*position
     t.goto(position,0)
     draw(height,color)
@@ -25,6 +25,10 @@ def draw(height,color):
     t.fillcolor('blue')
     t.fillcolor(color)
     t.pendown()
+    t.forward(20)
+    t.left(90)
+    t.forward(10*height)
+    t.left(90)
     t.forward(20)
     t.left(90)
     t.forward(10*height)
@@ -46,7 +50,6 @@ for i in l:
 for item in c:
     create(item.height,item.position)
 
-for i in c: 
-    swap(c[3],c[4])
+swap(c[3],c[4])
 
 turtle.exitonclick()
