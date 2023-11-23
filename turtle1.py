@@ -1,7 +1,11 @@
 import turtle
 
 t = turtle.Turtle()
-t.pencolor('white')
+t.pencolor('black')
+name=turtle.Screen()
+turtle.screensize(bg="black")
+turtle.setup(width=1.0,height=1.0)
+name.title('Graphical view of insertion Sort ')
 
 def create(height,position,color='blue'):
     #canvas 700x650
@@ -32,7 +36,7 @@ def draw(height,color):
     t.penup()
 
 def swap(c1,c2):
-    create(c1,i-1,'white')
+    create(c1,i-1,'black')
     create(c2,i-1)
     create(c1,i)
 
@@ -44,5 +48,5 @@ for item in l:
     pos+=1
 i = 4
 swap(l[i-1],l[i])
-
+#πρώτα να βρούμε τρόπο να αλλάζει το χρώμα της επιλεγμένης μπάρας
 turtle.exitonclick()
