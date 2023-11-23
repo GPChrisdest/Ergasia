@@ -13,8 +13,6 @@
   2. Insert list (user input εναν εναν τους αριθμους, <enter> για να σταματησει)
   3. View list
  
-  Start Sorting:
-  1. Plain Sort (απλα καλει την συναρτηση sort() και φτιαχνει την λιστα)
-  2. Sort + Diagram (κανει sort() και εμφανιζει το διαγραμμα turtle)
+  Start Sort + Diagram (κανει sort() και εμφανιζει το διαγραμμα turtle)
  
   !!! Αν ο χρηστης δωσει κενη λιστα/δεν εφτιαξε ποτέ λιστα στο list options να βγαζει μηνυμα
