@@ -1,10 +1,8 @@
-import turtle
+import turtle as t
 
-t = turtle.Turtle()
+t = t.Turtle()
 
-import tkinter
 
-t = turtle.Turtle()
 t.pencolor('white')
 
 class Collumn():
@@ -28,9 +26,9 @@ def create(height,position,color='blue'):
         position = 700 - 31*position
     t.goto(position,0)
 
-    draw(height)
+    draw(height,color='blue')
 
-def draw(height):
+def draw(height,color='blue'):
     t.begin_fill()
     t.fillcolor('blue')
     draw(height,color)
@@ -78,9 +76,9 @@ for item in c:
 
 for i in c:
     collumn(i.height,i.position)
-    turtle.exitonclick()
+    t.exitonclick()
     create(item.height,item.position)
 
 swap(c[3],c[4])
 
-turtle.exitonclick()
+t.exitonclick()
