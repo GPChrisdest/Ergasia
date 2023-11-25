@@ -11,7 +11,6 @@ def sort(list: list):
                     continue
                 val = list.pop(i)
                 list.insert(j, val)
-                i -= 1  # Decrement i to account for the insertion before current i, thus ensuring that all items are checked
                 break
         i += 1  # Increment i and continue the loop
     return list
