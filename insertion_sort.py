@@ -12,7 +12,7 @@ def sort(list: list):
                 list[i].set_color("red")
                 val = list.pop(i)
                 val.set_position(j, max(map(lambda c: c.get_height(), list)))
-                for k in range(j, len(list)):
+                for k in range(j, i):
                     list[k].set_position(k + 1, max_height)
                 list.insert(j, val)
                 list[j].set_color("blue")
