@@ -11,7 +11,7 @@ screen.tracer(0, 0)
 # name.screensize(bg="black", canvheight=650, canvwidth=700)
 # name.setup(width=1.0, height=1.0, starty=0, startx=0)
 screen.setup(height=650, width=700)
-screen.setworldcoordinates(llx=0, urx=700, lly=-650 // 2, ury=650 // 2)
+screen.setworldcoordinates(llx=0, urx=700, lly=0, ury=650)
 screen.bgcolor("black")
 screen.title("Graphical view of insertion Sort ")
 
