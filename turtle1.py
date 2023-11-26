@@ -1,3 +1,4 @@
+import random
 import turtle
 from time import sleep
 
@@ -6,7 +7,7 @@ from insertion_sort import sort
 # t = turtle.Turtle()
 # t.pencolor("black")
 screen = turtle.Screen()
-screen.tracer(0)
+screen.tracer(0, 0)
 # name.screensize(bg="black", canvheight=650, canvwidth=700)
 # name.setup(width=1.0, height=1.0, starty=0, startx=0)
 screen.setup(height=650, width=700)
@@ -37,11 +38,11 @@ class Column:
         if max_height is not None:
             color = self._t.color()[0]
             self._t.color("black")
-            self._draw(max_height)
+            self._draw(max_height, False)
             self._t.color(color)
         self._draw(height)
 
-    def _draw(self, height: int):
+    def _draw(self, height: int, update=True):
         self._t.begin_fill()
         self._t.pendown()
         self._t.forward(20)
@@ -54,12 +55,12 @@ class Column:
         self._t.left(90)
         self._t.end_fill()
         self._t.penup()
-        self._t.screen.update()
+        if update == True:
+            self._t.screen.update()
 
     def set_color(self, color):
         self._t.color(color)
-        print(color)
-        self._draw(self._height)
+        self._draw(self._height, False)
 
     def get_height(self):
         return self._height
@@ -72,9 +73,9 @@ class Column:
         self._create(self._height, self._position, max_height=max_height)
 
 
-l = [5, 8, 6, 30, 10, 25, 17, 23, 15, 9, 22, 18, 4, 1]
+l = [random.randint(1, 40) for i in range(30)]
 columns = [Column(i, p) for p, i in enumerate(l)]
-sleep(5)
+sleep(3)
 sort(columns)
 # pos = 0
 
