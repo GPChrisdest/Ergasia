@@ -8,8 +8,6 @@ from insertion_sort import sort
 # t.pencolor("black")
 screen = turtle.Screen()
 screen.tracer(0, 0)
-# name.screensize(bg="black", canvheight=650, canvwidth=700)
-# name.setup(width=1.0, height=1.0, starty=0, startx=0)
 screen.setup(height=1.0, width=1.0)
 screen.setworldcoordinates(llx=0, urx=700, lly=0, ury=650)
 screen.bgcolor("black")
@@ -30,11 +28,7 @@ class Column:
         self._t.hideturtle()
         self._t.speed(0)
         self._t.penup()
-        # if position < 35:
-        #     position = -700 + 31 * position
-        # else:
-        #     position = 700 - 31 * position
-        self._t.goto(position * 21, 0)
+        self._t.goto(position * 22, 0)
         if max_height is not None:
             color = self._t.color()[0]
             self._t.color("black")
@@ -77,12 +71,5 @@ l = [random.randint(1, 40) for i in range(30)]
 columns = [Column(i, p) for p, i in enumerate(l)]
 sleep(3)
 sort(columns)
-# pos = 0
 
-# for item in l:
-#     create(item, pos)
-#     pos += 1
-# i = 4
-# swap(l[i - 1], l[i])
-# πρώτα να βρούμε τρόπο να αλλάζει το χρώμα της επιλεγμένης μπάρας
 screen.exitonclick()
