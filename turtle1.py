@@ -28,7 +28,7 @@ class Column:
         self._t.hideturtle()
         self._t.speed(0)
         self._t.penup()
-        self._t.goto(position * 22, 0)
+        self._t.goto(position * (701/len(l)),0)
         if max_height is not None:
             color = self._t.color()[0]
             self._t.color("black")
@@ -39,11 +39,11 @@ class Column:
     def _draw(self, height: int, update=True):
         self._t.begin_fill()
         self._t.pendown()
-        self._t.forward(20)
+        self._t.forward(701/len(l) - 1)
         self._t.left(90)
         self._t.forward(10 * height)
         self._t.left(90)
-        self._t.forward(20)
+        self._t.forward(701/len(l) - 1)
         self._t.left(90)
         self._t.forward(10 * height)
         self._t.left(90)
