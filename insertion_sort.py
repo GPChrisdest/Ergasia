@@ -1,17 +1,18 @@
+li=[9,1,5,2,7,6]
+
 def sort(list: list):
-    i = 1  # Starting index
-    while i < len(list):  # Loop through the whole list
-        for j in range(i - 1, -1, -1):  # Loop through indices below current index
-            """If the previous item of the list is smaller than the current one(i), check if the one before that(j-1)
-            is lower as well. If so, continue so that the check is run again with j = j-1. Otherwise, move the current
-            item(i) just before j.
-            """
-            if list[i] < list[j]:
-                if j - 1 >= 0 and list[i] < list[j - 1]:
-                    continue
-                val = list.pop(i)
-                list.insert(j, val)
-                i -= 1  # Decrement i to account for the insertion before current i, thus ensuring that all items are checked
-                break
-        i += 1  # Increment i and continue the loop
+    i=1
+    n=1
+    while True:
+        try:
+            if list[i]<list[i-1]:   
+                list[i-1],list[i]=list[i],list[i-1] #swap list elements if the previous number is lower 
+                print('step {}:{}'.format(n,list))
+                n+=1
+                i=1   
+            else:
+                i+=1
+        except IndexError:
+            break
     return list
+sort(li)

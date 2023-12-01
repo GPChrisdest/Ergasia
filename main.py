@@ -25,7 +25,7 @@ def list_options():
             continue
         user_choice = int(user_choice)
         if user_choice == 1:
-            list = [random.randint(0, 10000) for i in range(20)]
+            list = [random.randint(0, 100) for i in range(20)]
             print(f"List: {list}")
             sleep(2)
             break
