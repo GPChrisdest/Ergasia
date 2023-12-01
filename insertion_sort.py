@@ -1,5 +1,3 @@
-li=[9,1,5,2,7,6]
-
 def sort(list: list):
     i=1
     n=1
@@ -15,4 +13,3 @@ def sort(list: list):
         except IndexError:
             break
     return list
-sort(li)
