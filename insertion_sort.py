@@ -10,6 +10,7 @@ def sort(list: list):
                 if j - 1 >= 0 and list[i].get_height() < list[j - 1].get_height():
                     continue
                 list[i].set_color("red")
+                list[i-1].set_color("red")
                 val = list.pop(i)
                 for k in range(j, i):
                     list[k].set_position(k + 1, max_height)

@@ -1,11 +1,8 @@
 import random
 import turtle
 from time import sleep
-
 from insertion_sort import sort
 
-# t = turtle.Turtle()
-# t.pencolor("black")
 screen = turtle.Screen()
 screen.tracer(0, 0)
 screen.setup(height=1.0, width=1.0)
