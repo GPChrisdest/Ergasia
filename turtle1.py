@@ -12,7 +12,7 @@ screen.title("Graphical view of insertion Sort ")
 
 
 class Column:
-    def __init__(self, height: int, position: int, color: str = "blue"):
+    def __init__(self, height: int, position: int, color: str = "white"):
         self._height = height
         self._position = position
         self._t = turtle.Turtle()
@@ -63,10 +63,15 @@ class Column:
         self._position = pos
         self._create(self._height, self._position, max_height=max_height)
 
+l = []
+for u in range(40):
+    u = random.randint(1,40)
+    if not u in l:
+        l.append(u)
 
-l = [random.randint(1, 40) for i in range(30)]
 columns = [Column(i, p) for p, i in enumerate(l)]
 sleep(3)
+print(l)
 sort(columns)
-
+print(sorted(l))
 screen.exitonclick()
