@@ -2,7 +2,7 @@ import os
 import random
 from time import sleep
 
-from insertion_sort import sort
+from insertion_sort_menu import sort
 
 
 def clear_terminal():
