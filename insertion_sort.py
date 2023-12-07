@@ -5,6 +5,10 @@ def sort(list: list):
         val_height = val.get_height()
         j =i-1
         while j >= 0 and val_height < list[j].get_height():
+            try:
+                list[j+2].set_color('green')
+            except:
+                pass
             list[j].set_color("red")  
             list[j+1].set_color("red")
             list[j+1] = list[j]
