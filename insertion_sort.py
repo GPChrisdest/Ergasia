@@ -13,10 +13,9 @@ def sort(list: list):
             list[j+1].set_color("red")
             list[j+1].set_color("white") 
             list[j+1] = list[j]
-            if not val_height < list[j].get_height():
-                list[j].set_color("white")
             list[j].set_position(j+1, max_height)
-            j-= 1 
+            j-= 1
+            list[j+1].set_color("white")  
         list[j+1] = val
         val.set_position(j+1, max_height)
         list[-1].set_color('white')

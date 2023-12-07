@@ -10,7 +10,6 @@ screen.setworldcoordinates(llx=0, urx=700, lly=0, ury=650)
 screen.bgcolor("black")
 screen.title("Graphical view of insertion Sort ")
 
-
 class Column:
     def __init__(self, height: int, position: int, color: str = "white"):
         self._height = height
@@ -63,14 +62,4 @@ class Column:
         self._position = pos
         self._create(self._height, self._position, max_height=max_height)
 
-l = []
-for u in range(40):
-    u = random.randint(1,40)
-    if not u in l:
-        l.append(u)
-
-
-columns = [Column(i, p) for p, i in enumerate(l)]
-sleep(3)
-sort(columns)
 screen.exitonclick()
