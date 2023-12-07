@@ -19,7 +19,6 @@ def sort(list: list):
         list[j+1] = val
         val.set_position(j+1, max_height)
         list[-1].set_color('white')
-
     i=1
     n=1
     while True:
