@@ -11,7 +11,6 @@ def sort(list: list):
             except:
                 pass
             list[j].set_color("red")  
-            list[j+1].set_color("red")
             list[j+1].set_color("white") 
             list[j+1] = list[j]
             list[j].set_position(j+1, max_height)
