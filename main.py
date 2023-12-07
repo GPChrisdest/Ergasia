@@ -1,7 +1,7 @@
 import os
 import random
 from time import sleep
-
+from turtle1 import turtle1
 from insertion_sort_menu import sort
 
 
@@ -25,7 +25,7 @@ def list_options():
             continue
         user_choice = int(user_choice)
         if user_choice == 1:
-            list = [random.randint(0, 100) for i in range(20)]
+            list = [random.randint(0, 50) for i in range(20)]
             print(f"List: {list}")
             sleep(2)
             break
@@ -70,6 +70,7 @@ def sort_menu(list):
         return
     elif user_choice == 2:
         print("Work in progress!")
+        turtle1(list)
         sleep(1)
         return
 
