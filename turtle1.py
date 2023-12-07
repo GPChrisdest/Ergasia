@@ -69,9 +69,8 @@ for u in range(40):
     if not u in l:
         l.append(u)
 
+
 columns = [Column(i, p) for p, i in enumerate(l)]
 sleep(3)
-print(l)
 sort(columns)
-print(sorted(l))
 screen.exitonclick()
