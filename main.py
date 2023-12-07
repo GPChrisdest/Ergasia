@@ -25,20 +25,38 @@ def list_options():
             continue
         user_choice = int(user_choice)
         if user_choice == 1:
-            list = [random.randint(0, 50) for i in range(50)]
+            clear_terminal()
+            user_range=input(" Give range of numbers(min-mux):")
+            try:
+                user_am=int(input("Give length of the ramdom list:"))
+                start,end = user_range.split("-")
+                start=int(start)
+                end=int(end)
+                if start>=end:
+                    y=int('k')
+            except ValueError:
+                print("Wrong input!")    
+                sleep(3)
+                list_options()
+            list = [random.randint(start,end) for i in range(user_am)]
             print(f"List: {list}")
             sleep(2)
             break
         elif user_choice == 2:
             print("Insert each element one by one:")
             i = 0
-            while i < 20:
+            while True:
                 user_input = input(f"Element No.{i+1} ")
-                if not user_input.isdigit():
+                if user_input == '':
+                    clear_terminal()
+                    sleep(0.5)
+                    break
+                elif not user_input.isdigit():
                     print("Please input a number!")
                     continue
                 list.append(int(user_input))
                 i += 1
+            print("The given list is:")
             print(f"List: {list}")
             sleep(2)
             break
