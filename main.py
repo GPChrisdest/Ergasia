@@ -64,7 +64,7 @@ def sort_menu(list):
         user_choice = int(user_choice)
         break
     if user_choice == 1:
-        print(f"Sorted list: {sort(list)}")
+        print( f"\nSorted list: {sort(list)}")
         print("Press enter to return to main menu")
         input()
         return
