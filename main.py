@@ -107,8 +107,11 @@ def main():
             list = list_options()
             continue
         elif user_choice == 2:
-            sort_menu(list)
-            continue
+            if list == []:
+                list = list_options()
+            else:
+                sort_menu(list)
+                continue
         elif user_choice == 3:
             break
 
