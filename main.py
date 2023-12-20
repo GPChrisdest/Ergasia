@@ -1,11 +1,12 @@
+# ΔΙΚΟ ΜΟΥ
 import os
 import random
 from time import sleep
 from turtle1 import turtle1
 from insertion_sort_menu import sort
 
-
-def clear_terminal():
+# ΝΑ ΤΟ ΨΑΞΩ 
+def clear_terminal():  # καθαρίζει το terminal κάθε φορά που καλλείται η εντολή 
     if os.name == "nt":
         os.system("cls")
     elif os.name == "posix":
@@ -26,13 +27,13 @@ def list_options():
         user_choice = int(user_choice)
         if user_choice == 1:
             clear_terminal()
-            user_range=input(" Give range of numbers(min-mux):")
+            user_range=input(" Give range of numbers(min-max):")
             try:
                 user_am=int(input("Give length of the ramdom list:"))
-                start,end = user_range.split("-")
+                start,end = user_range.split("-") # κάνει split το input στην αρχική και τελική τιμή 
                 start=int(start)
                 end=int(end)
-                if start>=end:
+                if start>=end: # αυτό βγάζει error σε περίπτωση που το input είναι 50-20 και σε πάει κάτω
                     y=int('k')
             except ValueError:
                 print("Wrong input!")    
@@ -93,9 +94,9 @@ def sort_menu(list):
         return
 
 
-def main():
+def main(): # δημιουργεί κενή λίστα 
     list = []
-    while True:
+    while True: # βγάζει το μενού 
         clear_terminal()
         print("1. List Options\n2. Start Sorting\n3. Exit")
         user_choice = input("Select and option: ")
@@ -114,7 +115,8 @@ def main():
                 continue
         elif user_choice == 3:
             break
+        
 
 
-if __name__ == "__main__":
+if __name__ == "__main__": # καλεί το main
     main()
