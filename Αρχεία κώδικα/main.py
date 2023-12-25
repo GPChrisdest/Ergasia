@@ -2,14 +2,15 @@
 import os
 import random
 from time import sleep
-from turtle1 import turtle1
-from insertion_sort_menu import sort
 
-# ΝΑ ΤΟ ΨΑΞΩ 
-def clear_terminal():  # καθαρίζει το terminal κάθε φορά που καλλείται η εντολή 
-    if os.name == "nt":
+from insertion_sort_menu import sort
+from turtle1 import turtle1
+
+
+def clear_terminal():  # καθαρίζει το terminal κάθε φορά που καλλείται η εντολή
+    if os.name == "nt":  # εφόσον πρόκειται για windows τρέχει την εντολή cls
         os.system("cls")
-    elif os.name == "posix":
+    elif os.name == "posix":  # για οτιδήποτε άλλο τρέχει την εντολή clear
         os.system("clear")
 
 
@@ -27,19 +28,23 @@ def list_options():
         user_choice = int(user_choice)
         if user_choice == 1:
             clear_terminal()
-            user_range=input(" Give range of numbers(min-max):")
+            user_range = input("Give range of numbers(min-max):")
             try:
-                user_am=int(input("Give length of the ramdom list:"))
-                start,end = user_range.split("-") # κάνει split το input στην αρχική και τελική τιμή 
-                start=int(start)
-                end=int(end)
-                if start>=end: # αυτό βγάζει error σε περίπτωση που το input είναι 50-20 και σε πάει κάτω
-                    y=int('k')
+                user_am = int(input("Give length of the ramdom list:"))
+                start, end = user_range.split(
+                    "-"
+                )  # κάνει split το input στην αρχική και τελική τιμή
+                start = int(start)
+                end = int(end)
+                if (
+                    start >= end
+                ):  # αυτό βγάζει error σε περίπτωση που το input είναι 50-20 και σε πάει κάτω
+                    y = int("k")
             except ValueError:
-                print("Wrong input!")    
+                print("Wrong input!")
                 sleep(3)
                 list_options()
-            list = [random.randint(start,end) for i in range(user_am)]
+            list = [random.randint(start, end) for i in range(user_am)]
             print(f"List: {list}")
             sleep(2)
             break
@@ -48,7 +53,7 @@ def list_options():
             i = 0
             while True:
                 user_input = input(f"Element No.{i+1} ")
-                if user_input == '':
+                if user_input == "":
                     clear_terminal()
                     sleep(0.5)
                     break
@@ -83,7 +88,7 @@ def sort_menu(list):
         user_choice = int(user_choice)
         break
     if user_choice == 1:
-        print( f"\nSorted list: {sort(list)}")
+        print(f"\nSorted list: {sort(list)}")
         print("Press enter to return to main menu")
         input()
         return
@@ -94,13 +99,13 @@ def sort_menu(list):
         return
 
 
-def main(): # δημιουργεί κενή λίστα 
+def main():  # δημιουργεί κενή λίστα
     list = []
-    while True: # βγάζει το μενού 
+    while True:  # βγάζει το μενού
         clear_terminal()
         print("1. List Options\n2. Start Sorting\n3. Exit")
         user_choice = input("Select and option: ")
-        if not user_choice.isdigit or int(user_choice) < 1 or int(user_choice) > 3:
+        if not user_choice.isdigit() or int(user_choice) < 1 or int(user_choice) > 3:
             print("Invalid Choice!")
             continue
         user_choice = int(user_choice)
@@ -115,8 +120,7 @@ def main(): # δημιουργεί κενή λίστα
                 continue
         elif user_choice == 3:
             break
-        
 
 
-if __name__ == "__main__": # καλεί το main
+if __name__ == "__main__":  # καλεί το main
     main()
