@@ -2,9 +2,9 @@ import threading
 
 
 def sort(list: list):
-    """This def gets,from main.py,a random list given by the user and graphicly(with insertion sort algo) trys to sort every single number step by step.
-    The user see the compering coloumns with red and with green the coloumn that the algo gona compare after the while loop ends.
-    When the list is sorted the coloumns become purple"""
+    """This def gets,from main.py,a random list given by the user and graphically (using the insertion sort algorithm) tries to sort every single number step by step.
+    The user sees the compering columns with red and with green the column that the algorithm is going to compare after the while loop ends.
+    When the list is being sorted the columns become purple"""
     max_height = max(
         map(lambda c: c.get_height(), list)
     )  # geting the max number of the list as the max height
