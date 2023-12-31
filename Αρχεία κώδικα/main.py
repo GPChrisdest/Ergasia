@@ -1,4 +1,3 @@
-# ΔΙΚΟ ΜΟΥ
 import os
 import random
 from time import sleep
@@ -7,39 +6,37 @@ from insertion_sort_menu import sort
 from turtle1 import turtle1
 
 
-def clear_terminal():  # καθαρίζει το terminal κάθε φορά που καλλείται η εντολή
-    if os.name == "nt":  # εφόσον πρόκειται για windows τρέχει την εντολή cls
+def clear_terminal(): 
+    '''Claers terminal baised on the system'''
+    if os.name == "nt": #runs if it is windows
         os.system("cls")
-    elif os.name == "posix":  # για οτιδήποτε άλλο τρέχει την εντολή clear
+    elif os.name == "posix": #runs for other type of operation systems
         os.system("clear")
 
 
 def list_options():
+    '''Creats a mini menu in which the user can creat the list that he wants,or a random list and then see it '''
     list = []
     while True:
         clear_terminal()
         print("List Options:\n1. Generate random list\n2. Insert list\n3. View List")
         user_choice = input("Select an option: ")
         if user_choice == "":
-            break  # Πρέπει να δούμε πώς θέλουμε να ελέγχουμε αν ήδη υπάρχει έγκυρη λίστα στην main
+            break  
         elif not user_choice.isdigit() or int(user_choice) < 1 or int(user_choice) > 3:
             print("Invalid Choice!")
             continue
         user_choice = int(user_choice)
         if user_choice == 1:
             clear_terminal()
-            user_range = input("Give range of numbers(min-max):")
+            user_range = input("Give range of numbers(min-max):") 
             try:
                 user_am = int(input("Give length of the ramdom list:"))
-                start, end = user_range.split(
-                    "-"
-                )  # κάνει split το input στην αρχική και τελική τιμή
+                start, end = user_range.split("-" )  
                 start = int(start)
                 end = int(end)
-                if (
-                    start >= end
-                ):  # αυτό βγάζει error σε περίπτωση που το input είναι 50-20 και σε πάει κάτω
-                    y = int("k")
+                if (start >= end): 
+                    y = int("k") # in this way the code informs the user that the input has something wrong
             except ValueError:
                 print("Wrong input!")
                 sleep(3)
@@ -75,6 +72,7 @@ def list_options():
 
 
 def sort_menu(list):
+    '''This function creats a sorting menu which compins with the other code files'''
     user_choice = 0
     while True:
         clear_terminal()
@@ -99,9 +97,10 @@ def sort_menu(list):
         return
 
 
-def main():  # δημιουργεί κενή λίστα
+def main():  
+    '''It cpmpins all the function into a new menu '''
     list = []
-    while True:  # βγάζει το μενού
+    while True: 
         clear_terminal()
         print("1. List Options\n2. Start Sorting\n3. Exit")
         user_choice = input("Select and option: ")
@@ -122,5 +121,5 @@ def main():  # δημιουργεί κενή λίστα
             break
 
 
-if __name__ == "__main__":  # καλεί το main
+if __name__ == "__main__":  
     main()
