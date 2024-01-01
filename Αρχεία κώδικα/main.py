@@ -5,14 +5,12 @@ from time import sleep
 from insertion_sort_menu import sort
 from turtle1 import turtle1
 
-
 def clear_terminal(): 
-    '''Claers terminal baised on the system'''
-    if os.name == "nt": #runs if it is windows
+    '''Clears terminal baised on the system'''
+    if os.name == "nt": #check if the os is windows and runs the equivalent command to clear the terminal, in this case its "cls"
         os.system("cls")
-    elif os.name == "posix": #runs for other type of operation systems
+    elif os.name == "posix": #if the os isn't windows the command "clear" runs instead
         os.system("clear")
-
 
 def list_options():
     '''Creats a mini menu in which the user can creat the list that he wants,or a random list and then see it '''
@@ -70,7 +68,6 @@ def list_options():
             continue
     return list
 
-
 def sort_menu(list):
     '''This function creats a sorting menu which compins with the other code files'''
     user_choice = 0
@@ -96,7 +93,6 @@ def sort_menu(list):
         sleep(1)
         return
 
-
 def main():  
     '''It cpmpins all the function into a new menu '''
     list = []
@@ -119,7 +115,6 @@ def main():
                 continue
         elif user_choice == 3:
             break
-
 
 if __name__ == "__main__":  
     main()
