@@ -12,9 +12,9 @@ def clear_terminal():
     elif os.name == "posix": #if the os isn't windows the command "clear" runs instead
         os.system("clear")
 
-def list_options():
+def list_options(list):
     '''Creats a mini menu in which the user can creat the list that he wants,or a random list and then see it '''
-    list = []
+    list = list
     while True:
         clear_terminal()
         print("List Options:\n1. Generate random list\n2. Insert list\n3. View List")
@@ -105,7 +105,7 @@ def main():
             continue
         user_choice = int(user_choice)
         if user_choice == 1:
-            list = list_options()
+            list = list_options(list)
             continue
         elif user_choice == 2:
             if list == []:
